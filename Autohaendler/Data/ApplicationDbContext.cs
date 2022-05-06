@@ -14,5 +14,6 @@ namespace Autohaendler.Data
         public DbSet<Auto> Auto { get; set; }
         public DbSet<Autoverkaeufe> Autoverkaeufe { get; set; }
         public DbSet<Hersteller> Hersteller { get; set; }
+        public object RegForms { get; internal set; }
     }
 }

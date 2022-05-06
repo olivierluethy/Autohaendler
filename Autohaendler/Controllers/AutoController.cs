@@ -11,6 +11,17 @@ namespace Autohaendler.Controllers
         {
             _db = db;
         }
+
+        // GET: ChildRegForms
+        /*public async Task<IActionResult> Index(string childname)
+        {
+            if(String.IsNullOrEmpty(childname))
+            {
+                // ViewBag.isshow = false;
+                var dataContext = _db.RegForms.Include(c => c.ApplicationUser).Include(c => c.Status);
+                
+            }
+        }*/
         public IActionResult Index()
         {
             IEnumerable<Auto> objAutoList = _db.Auto;
