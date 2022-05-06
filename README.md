@@ -1,0 +1,2 @@
+# Projekt: ASP.NET Core Autohändler
+Ein Projekt gemacht mit ASP.NET Core MVC, bei der man Autos, Hersteller und Autoverkäufe jeweils hinzufügen, bearbeiten und löschen kann. Die dafür genutzte Backend Datenbank ist Microsoft SQL.
