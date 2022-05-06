@@ -12,20 +12,16 @@ namespace Autohaendler.Controllers
             _db = db;
         }
 
-        // GET: ChildRegForms
-        /*public async Task<IActionResult> Index(string childname)
+        public IActionResult Index(string? modelName)
         {
-            if(String.IsNullOrEmpty(childname))
+            List<Auto> autos = _db.Auto.ToList();
+
+            if (!String.IsNullOrEmpty(modelName))
             {
-                // ViewBag.isshow = false;
-                var dataContext = _db.RegForms.Include(c => c.ApplicationUser).Include(c => c.Status);
-                
+                autos = autos.Where(a => a.Modell.Contains(modelName)).ToList();
             }
-        }*/
-        public IActionResult Index()
-        {
-            IEnumerable<Auto> objAutoList = _db.Auto;
-            return View(objAutoList);
+
+            return View(autos);
         }
         // GET
         public IActionResult Create()

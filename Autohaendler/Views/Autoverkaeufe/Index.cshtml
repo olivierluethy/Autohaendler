@@ -53,7 +53,7 @@
     <tbody> 
              @foreach(var obj in Model)
              {
-                 @{ var umsatz = @obj.Preis * @obj.Anzahl;}
+                 var umsatz = @obj.Preis * @obj.Anzahl;
             <tr>
                 <td width="10%">
                     @obj.Id                

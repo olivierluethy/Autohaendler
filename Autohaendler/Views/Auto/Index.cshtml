@@ -24,13 +24,13 @@
     {
         <h1>Keine Autos gefunden</h1>
     }else{
-        <form asp-action="Index">
+        <form asp-controller="Auto" asp-action="Index" method="get">
             <div class="input-group md-form form-sm formcol-2 pl-0">
-                <input name="childname" class=" form-control my-0 py-1 red-border" type="text" placeholder="Search">
+                <input name="modelName" class=" form-control my-0 py-1 red-border" type="text" placeholder="Search">
                 <div class="input-group-append">
-                    <span class="input-group-text red lighten-3" id="basic-text1">
+                    <button type="submit" class="input-group-text red lighten-3" id="basic-text1">
                         <i class="bi bi-search"></i>
-                    </span>
+                    </button>
                 </div>
             </div>
         </form>
@@ -42,10 +42,13 @@
                 Id
             </th>
             <th>
-                Datum
+                Modell
             </th>
             <th>
-                Anzahl
+                Hersteller
+            </th>
+            <th>
+                Farbe
             </th>
             <th>
                 Preis
@@ -71,19 +74,19 @@
                 <td width="30%">
                     @obj.Hersteller         
                 </td>
-                <td width="5%">
+                <td width="10%">
                     @obj.Farbe         
                 </td>
                 <td width="5%">
                     @obj.Preis       
                 </td>
-                <td width="35%">
+                <td width="10%">
                     <div class="w-75 btn-group" role="group">
                         <a asp-controller="Auto" asp-action="Edit" asp-route-id="@obj.Id" 
                         class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>
                     </div>          
                 </td>
-                <td width="35%">
+                <td width="12%">
                     <div class="w-75 btn-group" role="group">
                         <a asp-controller="Auto" asp-action="Delete" asp-route-id="@obj.Id" 
                         class="btn btn-primary mx-2"> <i class="bi bi-trash-fill"></i> Delete</a>
@@ -95,12 +98,3 @@
 </table>
 }
 </div>
-@section scripts{
-    <script>
-        $(function (){
-            $("#basic-text1").click(function(){
-                $("Form").submit();
-            })
-        });
-    </script>
-}
